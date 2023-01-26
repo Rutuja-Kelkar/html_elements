@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;a&gt; : anchor element</title>
+  </head>
+  <body>
+    <p><a href="/index.html">back to table of contents</a></p>
+    <hr />
+
+    <!-- Introdution of anchor element -->
+    <h1>&lt;a&gt; : anchor element</h1>
+    <p>
+      The anchor element, with its href attribute is used to create hyperlinks
+      to web pages, files, email addresses , locations in the same page, or
+      anything else a URL can address.
+    </p>
+    <br />
+    <br />
+
+    <!-- syntax -->
+    <h2>Syntax</h2>
+    <pre><code>&lt;a href="..." target="..."&gt;&lt;/a&gt;</code></pre>
+    <p>
+      where <code>href</code> contains the URL that the hyperlink points to.
+    </p>
+    <br />
+    <br />
+
+    <!-- Attributes of anchor elemenst -->
+    <h2 id="attributes">Attributes of anchor elements</h2>
+    <p>These are global attributes</p>
+
+    <!-- download attribute -->
+    <h3><code>download</code>:</h3>
+    <ul>
+      <li>Causes the browser to treat the URL as a download</li>
+      <li>Can be used with or without <code>filename</code> value</li>
+      <li>
+        Without a value the browser will suggest a filename/extension, generated
+        from various sources-
+        <ul>
+          <li>The <code>Content-Disposition</code> HTTP header</li>
+          <li>The final segment of the URL path</li>
+          <li>
+            The media type(form of <code>content-type</code> header, the start
+            os the <code>data : URL</code> or blob type for a
+            <code>blob:URL</code> )
+          </li>
+        </ul>
+      </li>
+      <li>
+        <code>filename:</code>
+        <ul>
+          <li>This suggests the filename</li>
+          <li>
+            <code>/</code> and <code>\</code> are converted to <code>-</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Filesystems may forbid other charactersin filenames,so browsers will
+        adjust the suggested name if necessary.
+      </li>
+    </ul>
+
+    <!-- href attribute -->
+    <h3><code>href:</code></h3>
+    <ul>
+      <li>This is the URL that the hyperlink points to.</li>
+      <li>
+        Links are not restricted to HTTP-based URLs- they can use any schema
+        supported by browsers like:
+        <ul>
+          <li>Sections of a page with document fragements</li>
+          <li>
+            Specific text portions with
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/Text_fragments"
+              >text fragements</a
+            >
+          </li>
+          <li>Peices of media files with media fragements</li>
+          <li>Telephone numbers with <code>tel:</code> URL</li>
+          <li>Email address with <code>mailto:</code> URL</li>
+          <li>
+            While web browsersmay not supportother URLschemes, websites can with
+            <code>registerProtcolHandler()</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <code>download</code> only works for same origin policy or the
+        <code>blob:</code> and <code>data:</code> schemes.
+      </li>
+      <li>
+        How browser treatsdownloads varies by browser,user settings,and other
+        factors .
+      </li>
+      <li>
+        User may be prompted the download starts, or the file may be
+        automatically saved, or it may be open automatically, either in an
+        external application orin the browser itself.
+      </li>
+      <li>
+        If the <code>Content-Disposition</code>resulting behaviour may be
+        differnt:
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-rev"
+          >read mdn docs</a
+        >.
+      </li>
+      <!-- start here next -->
+    </ul>
+
+    <h3><code>hreflang</code>:</h3>
+    <br />
+    <br />
+    <!-- Test display of html scenarios -->
+    <h2>Test display of html scenarios</h2>
+
+    <h3>General scenarios of <code>&lt;a&gt;</code></h3>
+    <ol>
+      <li>Linking an absolute URL</li>
+      <p>
+        <a href="https://www.mozilla.com">mozilla website</a>. This is a normal
+        syntax
+      </p>
+      <li>Linking a relative URL</li>
+      <p>
+        <a href="/index.html">This is linked to home page</a>
+      </p>
+      <li>Linking an element on the same page</li>
+      <p>
+        <a
+          href="/html_elements/html_elements_starting_with_letter_a/anchor_element.html#attributes"
+          >Link to atrributes on the same page
+        </a>
+      </p>
+      <li>Link to top of the page</li>
+      <p><a href="#">Goto top of this page</a></p>
+      <li>When opening and closing tags are missing for <code>a</code> :</li>
+      <p>
+        <a href="/index.html"></a>This will link and provide an output, however
+        it will take all the remainder html code as a link.
+      </p>
+      <li>When href is missing from <code>a</code> html element :</li>
+      <p>
+        <a>This is a without href attribute</a><br />In this case, text is not
+        set as a hyperlink
+      </p>
+      <li>When closing tag is not present</li>
+      <p>
+        In this case, the entire following text in html code is used as a
+        hyperlink text
+      </p>
+      <li>When hyperlink text is not provided</li>
+      <p>In this case, the hyperlink text is not displayed on the web page</p>
+    </ol>
+
+    <!-- positive download scenarios -->
+    <h3>Positive <code>download</code> scenarios</h3>
+    <ol>
+      <li>Normal download scenarios</li>
+      <p><a href=""></a></p>
+      <li>scenario 2</li>
+    </ol>
+
+    <!-- negative downlaod scenarios -->
+    <h3>Negative <code>download</code> scenarios</h3>
+    <ol>
+      <li>Scenario 1</li>
+      <li>scenario 2</li>
+    </ol>
+
+    <!-- positive href scenarios -->
+    <h3>Positive <code>href</code> scenarios</h3>
+    <ol>
+      <li>Scenario 1</li>
+      <li>scenario 2</li>
+    </ol>
+
+    <!-- negative href scenarios -->
+    <h3>Negative <code>href</code> scenarios</h3>
+    <ol>
+      <li>Scenario 1</li>
+      <li>scenario 2</li>
+    </ol>
+
+    <br />
+    <br />
+    <h2>Questions to ask yourself after above learning:</h2>
+    <ol>
+      <li>Can you code this using plain notepad?</li>
+    </ol>
+  </body>
+</html>
